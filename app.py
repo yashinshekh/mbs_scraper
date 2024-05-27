@@ -77,7 +77,9 @@ if __name__ == '__main__':
 
     else:
         newpath = os.getenv('LOCALAPPDATA')+"\\Google\\Chrome\\User Data\\Profile 1\\Default"
-        options.add_argument("--user-data-dir="+newpath)
+
+        path = r"C:\Users\hanss\AppData\Local\Google\Chrome\User Data\Profile 2"
+        options.add_argument(f"--user-data-dir={path}")
 
         # options.add_argument(f"--user-data-dir={CHROME_PROFILE_PATH}")
         # options.add_argument("profile-directory=Default")
