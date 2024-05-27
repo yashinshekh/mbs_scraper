@@ -6,8 +6,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 # Create Chrome options
 options = uc.ChromeOptions()
-options.add_argument(r"user-data-dir=C:\\Users\\hanss\\AppData\\Local\\Google\\Chrome\\User Data")
-options.add_argument("profile-directory=Profile 2")
+options.add_argument(r"--user-data-dir=C:\\Users\\hanss\\AppData\\Local\\Google\\Chrome\\User Data")
+options.add_argument("--profile-directory=Profile 2")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--disable-gpu")
