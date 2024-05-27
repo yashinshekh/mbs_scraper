@@ -35,6 +35,15 @@ import time
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
 
+
+def waituntil(string):
+    if string not in str(driver.page_source):
+        time.sleep(3)
+        print("Waiting!!")
+        return waituntil(string)
+    return
+
+
 def getdata():
 
     datas = Selector(text=driver.page_source).xpath('.//*[@class="mbs-window-content next-page-loaded"]//tbody/tr').extract()
@@ -69,7 +78,7 @@ if __name__ == '__main__':
     CHROME_PROFILE_PATH = r"C:\\Users\\hanss\\AppData\Local\\Google\\Chrome\\User Data\\Default"
     SEARCH_URL = "https://www.amazon.com/s?k=VUOAISJDIOJW&crid=K8RTEIQ80HZJ&sprefix=vuoaisjdiojw%2Caps%2C315&ref=nb_sb_noss"
 
-    options = webdriver.ChromeOptions()
+    options = uc.ChromeOptions()
     # options = Options()
     if platform.system() == "Linux":
         options.add_argument("--user-data-dir=/home/yashin/.config/google-chrome/Default")
@@ -89,6 +98,7 @@ if __name__ == '__main__':
     driver.get("https://amazon.com")
 
     input("Ready...")
+    waituntil('nav-global-location-popover-link')
     driver.find_element(By.XPATH,'.//*[@id="nav-global-location-popover-link"]').click()
     time.sleep(5)
     driver.find_element(By.XPATH,'.//input[@id="GLUXZipUpdateInput"]').send_keys("10001")
@@ -112,6 +122,8 @@ if __name__ == '__main__':
     driver.find_element(By.XPATH,'.//span[@class="header-title-text"][contains(.,"Weight")]/following-sibling::div/input[2]').send_keys(5)
     time.sleep(1)
     ActionChains(driver).send_keys(Keys.ENTER).perform()
+
+    getdata()
 
 
 
