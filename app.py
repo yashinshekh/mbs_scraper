@@ -76,7 +76,10 @@ if __name__ == '__main__':
         driver = uc.Chrome(options=options,version_main=123)
 
     else:
-        options.add_argument(f"--user-data-dir={CHROME_PROFILE_PATH}")
+        newpath = os.getenv('LOCALAPPDATA')+"\\Google\\Chrome\\User Data\\Profile 1"
+        options.add_argument("--user-data-dir="+newpath)
+
+        # options.add_argument(f"--user-data-dir={CHROME_PROFILE_PATH}")
         # options.add_argument("profile-directory=Default")
         driver = uc.Chrome(options=options, version_main=125)
 
