@@ -81,7 +81,7 @@ if __name__ == '__main__':
     time.sleep(5)
     driver.find_element(By.XPATH,'.//input[@id="GLUXZipUpdateInput"]').send_keys("10001")
     time.sleep(3)
-    driver.find_element(By.XPATH,'.//span[contains(.,"Apply")]').click()
+    driver.find_element(By.XPATH,'.//span[contains(.,"Apply")] | .//button[contains(.,"Done")]').click()
     time.sleep(3)
 
     driver.get(SEARCH_URL)
