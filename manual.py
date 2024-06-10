@@ -72,7 +72,7 @@ if __name__ == '__main__':
     time.sleep(3)
     driver.get("https://chromewebstore.google.com/detail/mbs-retriever/afanpgdoladoakmnkgoccdfoillpeaop?hl=en&pli=1")
     driver.find_element(By.XPATH,'.//button[contains(.,"Add to Chrome")]').click()
-    time.sleep(6)
+    time.sleep(12)
     driver.get("https://amazon.com")
 
     input("Ready...")
