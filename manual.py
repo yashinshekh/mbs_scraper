@@ -67,7 +67,7 @@ def getdata():
 if __name__ == '__main__':
     SEARCH_URL = "https://www.amazon.com/s?k=VUOAISJDIOJW&crid=K8RTEIQ80HZJ&sprefix=vuoaisjdiojw%2Caps%2C315&ref=nb_sb_noss"
 
-    driver = uc.Chrome(version_main=123)
+    driver = uc.Chrome(version_main=125)
 
     time.sleep(3)
     driver.get("https://chromewebstore.google.com/detail/mbs-retriever/afanpgdoladoakmnkgoccdfoillpeaop?hl=en&pli=1")
